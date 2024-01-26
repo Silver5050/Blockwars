@@ -10,6 +10,7 @@ public final class Blockwars extends JavaPlugin {
         getCommand("fly").setExecutor(new FlyCommand());
         getCommand("gm").setExecutor(new gmCommand());
         getCommand("heal").setExecutor(new HealCommand());
+        getCommand("workbench").setExecutor(new WorkBenchCommand());
     }
 
     @Override
