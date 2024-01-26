@@ -12,7 +12,7 @@ import java.util.UUID;
 
 public final class VanishCommand implements CommandExecutor {
 
-    private static String prefix = "[§bBlockWars§f] | ";
+    private static String prefix = "[§bBlockWars §f| ";
     private final Set<UUID> vanishedPlayers = new HashSet<>();
 
     @Override
