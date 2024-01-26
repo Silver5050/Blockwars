@@ -9,25 +9,28 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class gmCommand implements CommandExecutor {
+
+    private static String prefix = "§bBLOCKWARS | ";
+
     @Override
     public boolean onCommand(CommandSender s, Command cmd, String S, String[] args) {
         if (s instanceof Player) {
-            if (s.hasPermission("Citybuild.system.gm")) {
+            if (s.hasPermission("Blockwars.gm")) {
                 if (args.length == 1) {
                     if (args[0].equalsIgnoreCase("0")) {
                         ((Player) s).setGameMode(GameMode.SURVIVAL);
-                        s.sendMessage(ChatColor.BLUE + "Du bist jetzt im Überlebensmodus");
+                        s.sendMessage(prefix + "§fDu bist jetzt im Überlebensmodus");
                     } else if (args[0].equalsIgnoreCase("1")) {
                         ((Player) s).setGameMode((GameMode.CREATIVE));
-                        s.sendMessage(ChatColor.BLUE + "Du bist jetzt im Kreativmodus");
+                        s.sendMessage(prefix + "§fDu bist jetzt im Kreativmodus");
                     } else if (args[0].equalsIgnoreCase("2")) {
                         ((Player) s).setGameMode(GameMode.ADVENTURE);
-                        s.sendMessage(ChatColor.BLUE + "Du bist jetzt im Abenteuermodus");
+                        s.sendMessage(prefix + "§fDu bist jetzt im Abenteuermodus");
                     } else if (args[0].equalsIgnoreCase("3")) {
                         ((Player) s).setGameMode(GameMode.SPECTATOR);
-                        s.sendMessage(ChatColor.BLUE + "Du bist jetzt im spectatormodus");
+                        s.sendMessage(prefix + "§fDu bist jetzt im spectatormodus");
                     }else {
-                        s.sendMessage(ChatColor.RED + "Bitte verwende /gm 0-3 (name)");
+                        s.sendMessage(prefix + "§fBitte verwende /gm 0-3 (name)");
                     }
                 } else if (args.length == 2) {
                     if (args[0].equalsIgnoreCase("0")) {

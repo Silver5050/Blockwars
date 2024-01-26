@@ -6,7 +6,13 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+
 public class FlyCommand implements CommandExecutor {
+
+  private static String prefix = "§bBLOCKWARS | ";
+
+
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String lable, String[] args) {
 
@@ -15,14 +21,14 @@ public class FlyCommand implements CommandExecutor {
            if (!p.getAllowFlight()) {
                p.setAllowFlight(true);
                p.setFlying(true);
-               p.sendMessage("§4Du Kannst Jetzt fliegen!");
+               p.sendMessage(prefix + "Du kannst Jetzt fliegen!");
            }else {
                p.setAllowFlight(false);
                p.setFlying(false);
-               p.sendMessage("§4Du kannst jetzt nicht mehr fliegen!");
+               p.sendMessage(prefix + "Du kannst jetzt nicht mehr fliegen!");
            }
        }else {
-           sender.sendMessage("§4Dazu hast du keine rechte");
+           sender.sendMessage(prefix + "Dazu hast du keine rechte");
        }
         return false;
     }
