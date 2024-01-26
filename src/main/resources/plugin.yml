@@ -8,3 +8,7 @@ commands:
   gm:
   heal:
   workbench:
+vanish:
+  description: "Vanish a player."
+  usage: "/vanish [player]"
+  permission: Blockwars.vanish

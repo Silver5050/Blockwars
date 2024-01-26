@@ -11,6 +11,7 @@ public final class Blockwars extends JavaPlugin {
         getCommand("gm").setExecutor(new gmCommand());
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("workbench").setExecutor(new WorkBenchCommand());
+        getCommand("vanish").setExecutor(new VanishCommand());
     }
 
     @Override
