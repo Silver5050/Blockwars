@@ -7,3 +7,6 @@ commands:
   fly:
   gm:
   heal:
+  workbench:
+    aliases:
+      - wb:
