@@ -1,7 +1,6 @@
 package de.silver.blockwars;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -10,7 +9,7 @@ import org.bukkit.entity.Player;
 
 public class gmCommand implements CommandExecutor {
 
-    private static String prefix = "§bBLOCKWARS | ";
+    private static String prefix = "[§bBlockWars§f] | ";
 
     @Override
     public boolean onCommand(CommandSender s, Command cmd, String S, String[] args) {

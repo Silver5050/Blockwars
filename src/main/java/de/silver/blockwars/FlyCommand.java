@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 
 public class FlyCommand implements CommandExecutor {
 
-  private static String prefix = "§bBLOCKWARS | ";
+  private static String prefix = "[§bBlockWars§f] | ";
 
 
 

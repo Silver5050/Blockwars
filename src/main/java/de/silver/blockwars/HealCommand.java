@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 public class HealCommand implements CommandExecutor {
 
-    private static String prefix = "§bBLOCKWARS | ";
+    private static String prefix = "[§bBlockWars§f] | ";
 
 
     @Override
