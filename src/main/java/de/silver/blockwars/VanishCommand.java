@@ -1,7 +1,6 @@
 package de.silver.blockwars;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -54,8 +53,7 @@ public final class VanishCommand implements CommandExecutor {
                 otherPlayer.hidePlayer(targetPlayer);
         }
 
-        sender.sendMessage(prefix
-                + "Spieler '" + targetPlayer.getName() + "' ist jetzt " + (isVanished ? "Sichtbar" : "vanished") + ".");
+        sender.sendMessage(prefix + "Spieler '" + targetPlayer.getName() + "' ist jetzt " + (isVanished ? "Sichtbar" : "vanished") + ".");
 
         if (isVanished)
             vanishedPlayers.remove(uniqueId);
