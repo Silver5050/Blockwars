@@ -8,7 +8,7 @@ public final class Blockwars extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         getCommand("fly").setExecutor(new FlyCommand());
-
+        getCommand("gm").setExecutor(new gmCommand());
     }
 
     @Override
