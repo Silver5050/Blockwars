@@ -7,6 +7,7 @@ public final class Blockwars extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        getCommand("fly").setExecutor(new FlyCommand());
 
     }
 

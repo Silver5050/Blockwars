@@ -3,3 +3,5 @@ version: '${project.version}'
 main: de.silver.blockwars.Blockwars
 api-version: '1.20'
 load: STARTUP
+commands:
+  fly:
