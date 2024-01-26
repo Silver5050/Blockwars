@@ -8,5 +8,4 @@ commands:
   gm:
   heal:
   workbench:
-    aliases:
-      - wb:
+  vanish:
