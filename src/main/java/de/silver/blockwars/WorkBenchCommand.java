@@ -13,6 +13,7 @@ public class WorkBenchCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender s, Command cmd, String label, String[] args) {
+        if (s.hasPermission("Blockwars.WorkeBench"))
         if((s instanceof Player)) {
             Player p = (Player) s;
             p.openWorkbench(null, true);

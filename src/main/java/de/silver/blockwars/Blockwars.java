@@ -12,6 +12,7 @@ public final class Blockwars extends JavaPlugin {
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("workbench").setExecutor(new WorkBenchCommand());
         getCommand("vanish").setExecutor(new VanishCommand());
+        getCommand("discord").setExecutor(new DiscordCommand());
     }
 
     @Override
