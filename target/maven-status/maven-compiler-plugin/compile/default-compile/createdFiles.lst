@@ -1,6 +1,7 @@
 de\silver\blockwars\HealCommand.class
 de\silver\blockwars\DiscordCommand.class
 de\silver\blockwars\EnderchestCommand.class
+de\silver\blockwars\SpeedCommand.class
 de\silver\blockwars\gmCommand.class
 de\silver\blockwars\WorkBenchCommand.class
 de\silver\blockwars\FlyCommand.class
