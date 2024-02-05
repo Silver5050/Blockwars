@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 public class EnderchestCommand implements CommandExecutor {
 
-    private static String prefix = "§bBlockWars §f| ";
+    private static String prefix = "§f[§bBlockWars§f]" ;
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] strings) {

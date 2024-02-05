@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 
 public class gmCommand implements CommandExecutor {
 
-    private static String prefix = "§bBlockWars §f| ";
+    private static String prefix = "§f[§bBlockWars§f] ";
 
     @Override
     public boolean onCommand(CommandSender s, Command cmd, String S, String[] args) {

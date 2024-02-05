@@ -8,7 +8,10 @@ commands:
   gm:
   heal:
   workbench:
+    aliases: wb
   vanish:
+    aliases: v
   discord:
+    aliases: dc
   enderchest:
-  speed:
+    aliases: ec

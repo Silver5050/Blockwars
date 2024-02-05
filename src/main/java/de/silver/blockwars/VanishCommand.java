@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerDropItemEvent;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,7 +13,7 @@ import java.util.UUID;
 
 public final class VanishCommand implements CommandExecutor {
 
-    private static String prefix = "§bBlockWars §f| ";
+    private static String prefix = "§f[§bBlockWars§f] ";
     private final Set<UUID> vanishedPlayers = new HashSet<>();
 
     @Override
@@ -49,11 +50,12 @@ public final class VanishCommand implements CommandExecutor {
 
             if (isVanished)
                 otherPlayer.showPlayer(targetPlayer);
+
             else
                 otherPlayer.hidePlayer(targetPlayer);
         }
 
-        sender.sendMessage(prefix + "Spieler '" + targetPlayer.getName() + "' ist jetzt " + (isVanished ? "Sichtbar" : "vanished") + ".");
+        sender.sendMessage(prefix + "Spieler " + targetPlayer.getName() + " ist jetzt " + (isVanished ? "Sichtbar" : "vanished") + ".");
 
         if (isVanished)
             vanishedPlayers.remove(uniqueId);

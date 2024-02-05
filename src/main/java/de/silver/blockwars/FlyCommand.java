@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 
 public class FlyCommand implements CommandExecutor {
 
-  private static String prefix = "§bBlockWars §f| ";
+    private static String prefix = "§f[§bBlockWars§f] ";
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String lable, String[] args) {
@@ -23,10 +23,10 @@ public class FlyCommand implements CommandExecutor {
            }else {
                p.setAllowFlight(false);
                p.setFlying(false);
-               p.sendMessage(prefix + "Du kannst jetzt nicht mehr fliegen!");
+               p.sendMessage(prefix + "§4Du kannst jetzt nicht mehr fliegen!");
            }
        }else {
-           sender.sendMessage(prefix + "Dazu hast du keine rechte");
+           sender.sendMessage(prefix + "§4Dazu hast du keine rechte");
        }
         return false;
     }
