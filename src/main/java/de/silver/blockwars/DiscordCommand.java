@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 public class DiscordCommand implements CommandExecutor {
 
-    private static String prefix = "§f[§bBlockWars§f]" ;
+    private static String prefix = "§f[§bBlockWars§f] ";
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] strings) {
         if (sender.hasPermission("Blockwars.Discord")) {

@@ -14,6 +14,7 @@ public final class Blockwars extends JavaPlugin {
         getCommand("vanish").setExecutor(new VanishCommand());
         getCommand("discord").setExecutor(new DiscordCommand());
         getCommand("enderchest").setExecutor(new EnderchestCommand());
+        getCommand("day").setExecutor(new DayCommand());
     }
 
     @Override
