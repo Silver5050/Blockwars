@@ -16,3 +16,4 @@ commands:
   enderchest:
     aliases: ec
   day:
+  night:
