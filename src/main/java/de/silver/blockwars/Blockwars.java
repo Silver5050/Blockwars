@@ -1,8 +1,15 @@
 package de.silver.blockwars;
 
+import MySQL.MySQL;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+import java.io.IOException;
+
 public final class Blockwars extends JavaPlugin {
+
+    public static MySQL mysql;
 
     @Override
     public void onEnable() {
@@ -21,5 +28,22 @@ public final class Blockwars extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+    public void loadMySQLFile() {
+        File MySQL = new File("plugins/blockwars/MySQL.yml");
+        YamlConfiguration yMySQL = YamlConfiguration.loadConfiguration(MySQL);
+        yMySQL.addDefault("MySQL.Host", (Object) "localhost");
+        yMySQL.addDefault("MySQL.Port", (Object)"3306");
+        yMySQL.addDefault("MySQL.Database", (Object)"gg");
+        yMySQL.addDefault("MySQL.User", (Object)"root");
+        yMySQL.addDefault("MySQL.Password", (Object)"123");
+        yMySQL.options().copyDefaults(true);
+        try {
+            yMySQL.save(MySQL);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
