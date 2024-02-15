@@ -1,19 +1,31 @@
 package de.silver.blockwars;
 
-import MySQL.MySQL;
-import org.bukkit.configuration.file.YamlConfiguration;
+
+import de.silver.blockwars.handlers.CommandHandler;
+import jdk.internal.platform.Metrics;
+import jdk.jfr.internal.Utils;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
-import java.io.IOException;
+
 
 public final class Blockwars extends JavaPlugin {
 
-    public static MySQL mysql;
-
     @Override
     public void onEnable() {
-        // Plugin startup logic
+
+        Bukkit.getConsoleSender().sendMessage("§7======================================");
+        Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bStatus: §aenabled");
+        Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bVersion: §6" + this.getDescription().getVersion());
+        Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bDeveloper: §6" + this.getDescription().getAuthors());
+        Bukkit.getConsoleSender().sendMessage("§7======================================");
+
+
+        getCommand("tpa").setExecutor(new CommandHandler(this));
+        getCommand("tpaccept").setExecutor(new CommandHandler(this));
+        getCommand("tpdeny").setExecutor(new CommandHandler(this));
+        getCommand("tpyes").setExecutor(new CommandHandler(this));
+        getCommand("tpno").setExecutor(new CommandHandler(this));
         getCommand("fly").setExecutor(new FlyCommand());
         getCommand("gm").setExecutor(new gmCommand());
         getCommand("heal").setExecutor(new HealCommand());
@@ -28,22 +40,12 @@ public final class Blockwars extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-    }
+        Bukkit.getConsoleSender().sendMessage("§7======================================");
+        Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bStatus: §adisabled");
+        Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bVersion: §6" + this.getDescription().getVersion());
+        Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bDeveloper: §6" + this.getDescription().getAuthors());
+        Bukkit.getConsoleSender().sendMessage("§7======================================");
 
-    public void loadMySQLFile() {
-        File MySQL = new File("plugins/blockwars/MySQL.yml");
-        YamlConfiguration yMySQL = YamlConfiguration.loadConfiguration(MySQL);
-        yMySQL.addDefault("MySQL.Host", (Object) "localhost");
-        yMySQL.addDefault("MySQL.Port", (Object)"3306");
-        yMySQL.addDefault("MySQL.Database", (Object)"gg");
-        yMySQL.addDefault("MySQL.User", (Object)"root");
-        yMySQL.addDefault("MySQL.Password", (Object)"123");
-        yMySQL.options().copyDefaults(true);
-        try {
-            yMySQL.save(MySQL);
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 }

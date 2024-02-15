@@ -20,7 +20,7 @@ public final class VanishCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player targetPlayer = null;
         if (sender.hasPermission("Blockwars.Vanish"))
-        // /vanish -> toggle status of self
+
         if (args.length == 0) {
             if (!(sender instanceof Player)) {
                 sender.sendMessage(prefix + "Bitte definire einen Spieler wenn du es schon von der console ausfürst!");
