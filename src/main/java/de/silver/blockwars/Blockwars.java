@@ -2,8 +2,6 @@ package de.silver.blockwars;
 
 
 import de.silver.blockwars.handlers.CommandHandler;
-import jdk.internal.platform.Metrics;
-import jdk.jfr.internal.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,7 +18,7 @@ public final class Blockwars extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bDeveloper: §6" + this.getDescription().getAuthors());
         Bukkit.getConsoleSender().sendMessage("§7======================================");
 
-
+        getCommand("abfall").setExecutor(new AbfallCommand());
         getCommand("tpa").setExecutor(new CommandHandler(this));
         getCommand("tpaccept").setExecutor(new CommandHandler(this));
         getCommand("tpdeny").setExecutor(new CommandHandler(this));
