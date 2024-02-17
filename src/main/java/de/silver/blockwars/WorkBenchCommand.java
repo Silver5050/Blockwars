@@ -1,5 +1,6 @@
 package de.silver.blockwars;
 
+import de.silver.blockwars.main.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,11 +14,11 @@ public class WorkBenchCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender s, Command cmd, String label, String[] args) {
-        if (s.hasPermission("Blockwars.WorkeBench"))
+        if (s.hasPermission("blockwars.command.workebench"))
         if((s instanceof Player)) {
             Player p = (Player) s;
             p.openWorkbench(null, true);
-            p.sendMessage(prefix + "Du hast deine Werkbank geöffnet!");
+            p.sendMessage(Main.prefix + "Du hast deine Werkbank geöffnet!");
         }
         return false;
     }

@@ -1,13 +1,15 @@
-package de.silver.blockwars;
+package de.silver.blockwars.main;
 
-
-import de.silver.blockwars.handlers.CommandHandler;
+import de.silver.blockwars.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
 
-public final class Blockwars extends JavaPlugin {
+public final class Main extends JavaPlugin {
+
+    public static String prefix = "§f[§bBlockWars§f] ";
+
 
     @Override
     public void onEnable() {
@@ -19,11 +21,6 @@ public final class Blockwars extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage("§7======================================");
 
         getCommand("abfall").setExecutor(new AbfallCommand());
-        getCommand("tpa").setExecutor(new CommandHandler(this));
-        getCommand("tpaccept").setExecutor(new CommandHandler(this));
-        getCommand("tpdeny").setExecutor(new CommandHandler(this));
-        getCommand("tpyes").setExecutor(new CommandHandler(this));
-        getCommand("tpno").setExecutor(new CommandHandler(this));
         getCommand("fly").setExecutor(new FlyCommand());
         getCommand("gm").setExecutor(new gmCommand());
         getCommand("heal").setExecutor(new HealCommand());

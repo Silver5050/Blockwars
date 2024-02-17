@@ -1,5 +1,6 @@
 package de.silver.blockwars;
 
+import de.silver.blockwars.main.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,20 +10,18 @@ import org.bukkit.World;
 
 public class NightCommand implements CommandExecutor {
 
-    private static String prefix = "§f[§bBlockWars§f] ";
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
 
         Player p = (Player) sender;
-        if (p.hasPermission("Blockwars.night")) {
+        if (p.hasPermission("blockwars.command.night")) {
             for (World world : Bukkit.getServer().getWorlds()) {
                 world.setTime(18000L);
             }
-            p.sendMessage(prefix + "Du hast die Zeit auf Nacht gestellt!");
+            p.sendMessage(Main.prefix + "Du hast die Zeit auf Nacht gestellt!");
             return false;
         }
-        p.sendMessage(prefix + "§4Dazu hast du keine Rechte!");
+        p.sendMessage(Main.prefix + "§4Dazu hast du keine Rechte!");
         return false;
     }
 }

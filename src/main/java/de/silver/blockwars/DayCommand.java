@@ -1,5 +1,6 @@
 package de.silver.blockwars;
 
+import de.silver.blockwars.main.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -9,20 +10,18 @@ import org.bukkit.entity.Player;
 
 public class DayCommand implements CommandExecutor {
 
-    private static String prefix = "§f[§bBlockWars§f] ";
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
 
         Player p = (Player) sender;
-        if (p.hasPermission("Blockwars.day")) {
+        if (p.hasPermission("blockwars.command.day")) {
             for (World world : Bukkit.getServer().getWorlds()) {
                 world.setTime(48000L);
             }
-            p.sendMessage(prefix + "Du hast die zeit auf Tag gestellt!");
+            p.sendMessage(Main.prefix + "Du hast die zeit auf Tag gestellt!");
             return false;
         }
-        p.sendMessage(prefix + "§4Dazu hast du keine Rechte!");
+        p.sendMessage(Main.prefix + "§4Dazu hast du keine Rechte!");
 
         return false;
     }
