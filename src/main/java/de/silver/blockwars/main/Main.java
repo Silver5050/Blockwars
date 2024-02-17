@@ -22,7 +22,7 @@ public final class Main extends JavaPlugin {
 
         getCommand("abfall").setExecutor(new AbfallCommand());
         getCommand("fly").setExecutor(new FlyCommand());
-        getCommand("gm").setExecutor(new gmCommand());
+        getCommand("gm").setExecutor(new GameModeCommand());
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("workbench").setExecutor(new WorkBenchCommand());
         getCommand("vanish").setExecutor(new VanishCommand());

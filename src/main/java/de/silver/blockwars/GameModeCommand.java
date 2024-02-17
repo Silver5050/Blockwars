@@ -8,23 +8,23 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class gmCommand implements CommandExecutor {
+public class GameModeCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender s, Command cmd, String S, String[] args) {
         if (s instanceof Player) {
             if (s.hasPermission("blockwars.command.gm")) {
                 if (args.length == 1) {
-                    if (args[0].equalsIgnoreCase("0")) {
+                    if (args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("survival")) {
                         ((Player) s).setGameMode(GameMode.SURVIVAL);
                         s.sendMessage(Main.prefix + "§fDu bist jetzt im Überlebensmodus");
-                    } else if (args[0].equalsIgnoreCase("1")) {
+                    } else if (args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("creative")) {
                         ((Player) s).setGameMode((GameMode.CREATIVE));
                         s.sendMessage(Main.prefix + "§fDu bist jetzt im Kreativmodus");
-                    } else if (args[0].equalsIgnoreCase("2")) {
+                    } else if (args[0].equalsIgnoreCase("2") || args[0].equalsIgnoreCase("adventure")) {
                         ((Player) s).setGameMode(GameMode.ADVENTURE);
                         s.sendMessage(Main.prefix + "§fDu bist jetzt im Abenteuermodus");
-                    } else if (args[0].equalsIgnoreCase("3")) {
+                    } else if (args[0].equalsIgnoreCase("3") || args[0].equalsIgnoreCase("spectator")) {
                         ((Player) s).setGameMode(GameMode.SPECTATOR);
                         s.sendMessage(Main.prefix + "§fDu bist jetzt im spectatormodus");
                     }else {

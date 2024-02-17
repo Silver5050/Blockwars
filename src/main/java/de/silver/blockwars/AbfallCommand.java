@@ -18,7 +18,7 @@ public class AbfallCommand implements CommandExecutor {
         if (sender instanceof Player) {
             Player p = (Player) sender;
                 if (p.hasPermission("blockwars.command.abfall")) {
-                    p.openInventory(Bukkit.createInventory((InventoryHolder)null, 18, "Abfall"));
+                    p.openInventory(Bukkit.createInventory(null, 18, "Abfall"));
                     p.playSound(p.getLocation(), Sound.BLOCK_LAVA_POP, 2.0F, 1.0F);
 
                 }else {
