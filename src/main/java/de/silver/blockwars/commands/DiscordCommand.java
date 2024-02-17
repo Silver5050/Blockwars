@@ -1,10 +1,9 @@
-package de.silver.blockwars;
+package de.silver.blockwars.commands;
 
-import de.silver.blockwars.main.Main;
+import de.silver.blockwars.Main;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 public class DiscordCommand implements CommandExecutor {
 

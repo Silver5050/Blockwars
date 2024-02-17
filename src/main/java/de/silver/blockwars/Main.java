@@ -1,6 +1,6 @@
-package de.silver.blockwars.main;
+package de.silver.blockwars;
 
-import de.silver.blockwars.*;
+import de.silver.blockwars.commands.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -8,7 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin {
 
-    public static String prefix = "§f[§bBlockWars§f] ";
+    public static String prefix = "§f[§bBlockWars§f] §7";
 
 
     @Override
