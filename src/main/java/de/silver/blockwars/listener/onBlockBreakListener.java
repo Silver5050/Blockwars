@@ -33,7 +33,7 @@ public class onBlockBreakListener implements Listener {
                     Bukkit.broadcastMessage("§8-------------------[§bSpawner-DROP§8]-------------------");
                     Bukkit.broadcastMessage(Main.prefix + " ");
                     Bukkit.broadcastMessage(Main.prefix + "Der Spieler §b" + p.getName() + "§7 hat einen Spawner gedroppt");
-                    Bukkit.broadcastMessage(Main.prefix + "§7Chance: 1/1000 §8§o(0,001%)");
+                    Bukkit.broadcastMessage(Main.prefix + "§7Chance: 1/1000 §8§o(0,01%)");
                     Bukkit.broadcastMessage(Main.prefix + " ");
                     Bukkit.broadcastMessage("§8-------------------[§bSpawner-DROP§8]-------------------");
                     for (Player all : Bukkit.getOnlinePlayers()) {
