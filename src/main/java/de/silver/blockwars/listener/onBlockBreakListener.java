@@ -6,6 +6,7 @@ import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.CreatureSpawner;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -13,6 +14,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class onBlockBreakListener implements Listener {
@@ -25,8 +27,9 @@ public class onBlockBreakListener implements Listener {
                 Random random = new Random();
                 int randomNumber = random.nextInt(1000) + 1;
                 ItemStack spawner = new ItemStack(Material.SPAWNER);
-                if (randomNumber == 4) {
-                    p.getInventory().addItem(spawner);
+                if (randomNumber == 696) {
+                    Item dropItem = p.getWorld().dropItem(p.getLocation(), spawner);
+                    dropItem.setPickupDelay(0);
                     Bukkit.broadcastMessage("§8-------------------[§bSpawner-DROP§8]-------------------");
                     Bukkit.broadcastMessage(Main.prefix + " ");
                     Bukkit.broadcastMessage(Main.prefix + "Der Spieler §b" + p.getName() + "§7 hat einen Spawner gedroppt");
@@ -41,5 +44,4 @@ public class onBlockBreakListener implements Listener {
         }
 
     }
-
 }

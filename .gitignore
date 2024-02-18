@@ -1,0 +1,15 @@
+/target/classes/de/silver/blockwars/commands/AbfallCommand.class
+/target/classes/de/silver/blockwars/commands/DayCommand.class
+/target/classes/de/silver/blockwars/commands/DiscordCommand.class
+/target/classes/de/silver/blockwars/commands/EnderchestCommand.class
+/target/classes/de/silver/blockwars/commands/FlyCommand.class
+/target/classes/de/silver/blockwars/commands/GameModeCommand.class
+/target/classes/de/silver/blockwars/commands/HealCommand.class
+/target/classes/de/silver/blockwars/commands/InvseeCommand.class
+/target/classes/de/silver/blockwars/Main.class
+/target/classes/de/silver/blockwars/commands/NightCommand.class
+/target/classes/de/silver/blockwars/listener/onBlockBreakListener.class
+/target/classes/de/silver/blockwars/listener/onJoinListener.class
+/target/classes/de/silver/blockwars/listener/onQuitListener.class
+/target/classes/de/silver/blockwars/commands/VanishCommand.class
+/target/classes/de/silver/blockwars/commands/WorkBenchCommand.class
