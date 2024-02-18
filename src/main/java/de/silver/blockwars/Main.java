@@ -1,6 +1,7 @@
 package de.silver.blockwars;
 
 import de.silver.blockwars.commands.*;
+import de.silver.blockwars.listener.PlayerJoinListener;
 import de.silver.blockwars.listener.onBlockBreakListener;
 import de.silver.blockwars.listener.onJoinListener;
 import de.silver.blockwars.listener.onQuitListener;
@@ -12,11 +13,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin {
 
+    private static Main instance;
+
     public static String prefix = "§f[§bBlockWars§f] §7";
 
 
     @Override
     public void onEnable() {
+
+        instance = this;
 
         Bukkit.getConsoleSender().sendMessage("§7======================================");
         Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bStatus: §aenabled");
@@ -35,16 +40,19 @@ public final class Main extends JavaPlugin {
         getCommand("day").setExecutor(new DayCommand());
         getCommand("night").setExecutor(new NightCommand());
         getCommand("invsee").setExecutor(new InvseeCommand());
+        getCommand("startkick").setExecutor(new StartKickCommand());
+        getCommand("votekick").setExecutor(new VoteKickCommand());
 
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new onJoinListener(), this);
         pm.registerEvents(new onQuitListener(), this);
         pm.registerEvents(new onBlockBreakListener(), this);
+        pm.registerEvents(new PlayerJoinListener(), this);
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+
         Bukkit.getConsoleSender().sendMessage("§7======================================");
         Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bStatus: §adisabled");
         Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bVersion: §6" + this.getDescription().getVersion());
@@ -53,4 +61,9 @@ public final class Main extends JavaPlugin {
 
 
     }
+
+    public static Main getInstance() {
+        return instance;
+    }
+
 }
