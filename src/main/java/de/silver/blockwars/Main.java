@@ -1,7 +1,11 @@
 package de.silver.blockwars;
 
 import de.silver.blockwars.commands.*;
+import de.silver.blockwars.listener.onBlockBreakListener;
+import de.silver.blockwars.listener.onJoinListener;
+import de.silver.blockwars.listener.onQuitListener;
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -30,6 +34,12 @@ public final class Main extends JavaPlugin {
         getCommand("enderchest").setExecutor(new EnderchestCommand());
         getCommand("day").setExecutor(new DayCommand());
         getCommand("night").setExecutor(new NightCommand());
+        getCommand("invsee").setExecutor(new InvseeCommand());
+
+        PluginManager pm = Bukkit.getPluginManager();
+        pm.registerEvents(new onJoinListener(), this);
+        pm.registerEvents(new onQuitListener(), this);
+        pm.registerEvents(new onBlockBreakListener(), this);
     }
 
     @Override

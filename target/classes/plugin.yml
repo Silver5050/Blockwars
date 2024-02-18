@@ -1,9 +1,11 @@
-author: silver
+authors: [silver, zitronekuchen]
 name: blockwars
 version: '1.0-SNAPSHOT'
-main: de.silver.blockwars.Blockwars
+main: de.silver.blockwars.Main
 api-version: '1.20'
 load: STARTUP
+prefix: "§f[§bBlockWars§f] §7"
+
 commands:
   fly:
   gm:
@@ -24,3 +26,4 @@ commands:
   tpyes:
   tpno:
   abfall:
+  invsee:
