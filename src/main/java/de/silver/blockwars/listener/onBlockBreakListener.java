@@ -22,6 +22,10 @@ public class onBlockBreakListener implements Listener {
     @EventHandler
     public void onBreak(BlockBreakEvent e) {
         Player p = e.getPlayer();
+        if (p.getInventory().getItemInMainHand().getItemMeta() == null) {
+            return;
+        }
+
         if (p.getInventory().getItemInMainHand().getItemMeta().getEnchants().containsKey(Enchantment.SILK_TOUCH) && e.getBlock().getType().equals(Material.SPAWNER)) {
             if (p.getInventory().getItemInMainHand().getType().equals(Material.DIAMOND_PICKAXE) || p.getInventory().getItemInMainHand().getType().equals(Material.NETHERITE_PICKAXE)) {
                 Random random = new Random();
