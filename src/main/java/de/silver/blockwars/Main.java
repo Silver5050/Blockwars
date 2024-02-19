@@ -1,10 +1,7 @@
 package de.silver.blockwars;
 
 import de.silver.blockwars.commands.*;
-import de.silver.blockwars.listener.PlayerJoinListener;
-import de.silver.blockwars.listener.onBlockBreakListener;
-import de.silver.blockwars.listener.onJoinListener;
-import de.silver.blockwars.listener.onQuitListener;
+import de.silver.blockwars.listener.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -42,12 +39,14 @@ public final class Main extends JavaPlugin {
         getCommand("invsee").setExecutor(new InvseeCommand());
         getCommand("startkick").setExecutor(new StartKickCommand());
         getCommand("votekick").setExecutor(new VoteKickCommand());
+        getCommand("tpa").setExecutor(new TpaCommand());
 
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new onJoinListener(), this);
         pm.registerEvents(new onQuitListener(), this);
         pm.registerEvents(new onBlockBreakListener(), this);
         pm.registerEvents(new PlayerJoinListener(), this);
+        pm.registerEvents(new onMoveListener(), this);
     }
 
     @Override
