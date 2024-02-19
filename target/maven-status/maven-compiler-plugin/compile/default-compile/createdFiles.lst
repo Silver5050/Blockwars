@@ -1,4 +1,5 @@
 de\silver\blockwars\commands\HealCommand.class
+de\silver\blockwars\commands\TpaCommand.class
 de\silver\blockwars\listener\onBlockBreakListener.class
 de\silver\blockwars\commands\DiscordCommand.class
 de\silver\blockwars\commands\NightCommand.class
@@ -8,6 +9,7 @@ de\silver\blockwars\commands\StartKickCommand.class
 de\silver\blockwars\commands\VoteKickCommand.class
 de\silver\blockwars\commands\DayCommand.class
 de\silver\blockwars\commands\GameModeCommand.class
+de\silver\blockwars\listener\onMoveListener.class
 de\silver\blockwars\commands\FlyCommand.class
 de\silver\blockwars\Main.class
 de\silver\blockwars\listener\onQuitListener.class
