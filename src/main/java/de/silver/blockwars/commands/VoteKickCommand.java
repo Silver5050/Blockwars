@@ -49,6 +49,7 @@ public class VoteKickCommand implements CommandExecutor {
         }
 
         Bukkit.getScheduler().runTaskLater(Main.getInstance(), ()-> {
+            if (!StartKickCommand.StartTimer) return;
             if (yesvote.size()>novote.size()) {
                 p.sendMessage(Main.prefix + "Der Spieler" + unbanplayer.getName() + " wurde gekickt!");
                 Bukkit.broadcastMessage(Main.prefix + "Der VoteKick wurde entschieden §a" + yesvote.size() + "§7/§c" + novote.size());
@@ -59,7 +60,7 @@ public class VoteKickCommand implements CommandExecutor {
                 StartKickCommand.StartTimer = false;
             } else {
                 Bukkit.broadcastMessage(Main.prefix + "Der VoteKick wurde entschieden §a" + yesvote.size() + "§7/§c" + novote.size());
-                p.sendMessage(Main.prefix + "Der Spieler" + unbanplayer.getName() + " wurde nicht gekickt!");
+                p.sendMessage(Main.prefix + "Der Spieler §b" + unbanplayer.getName() + "§7 wurde nicht gekickt!");
                 yesvote.clear();
                 novote.clear();
                 StartKickCommand.StartTimer = false;
