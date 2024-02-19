@@ -1,9 +1,9 @@
 package de.silver.blockwars;
 
 import de.silver.blockwars.commands.*;
+import de.silver.blockwars.listener.PlayerJoinListener;
 import de.silver.blockwars.listener.onBlockBreakListener;
 import de.silver.blockwars.listener.onJoinListener;
-import de.silver.blockwars.listener.onMoveListener;
 import de.silver.blockwars.listener.onQuitListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -13,9 +13,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin {
 
-    public static String prefix = "§f[§bBlockWars§f] §7";
-
     private static Main instance;
+
+    public static String prefix = "§f[§bBlockWars§f] §7";
 
 
     @Override
@@ -40,27 +40,30 @@ public final class Main extends JavaPlugin {
         getCommand("day").setExecutor(new DayCommand());
         getCommand("night").setExecutor(new NightCommand());
         getCommand("invsee").setExecutor(new InvseeCommand());
-        getCommand("tpa").setExecutor(new TpaCommand());
+        getCommand("startkick").setExecutor(new StartKickCommand());
+        getCommand("votekick").setExecutor(new VoteKickCommand());
 
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new onJoinListener(), this);
         pm.registerEvents(new onQuitListener(), this);
         pm.registerEvents(new onBlockBreakListener(), this);
-        pm.registerEvents(new onMoveListener(), this);
+        pm.registerEvents(new PlayerJoinListener(), this);
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+
         Bukkit.getConsoleSender().sendMessage("§7======================================");
         Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bStatus: §adisabled");
         Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bVersion: §6" + this.getDescription().getVersion());
         Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bDeveloper: §6" + this.getDescription().getAuthors());
         Bukkit.getConsoleSender().sendMessage("§7======================================");
-    }
 
+
+    }
 
     public static Main getInstance() {
         return instance;
     }
+
 }

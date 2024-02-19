@@ -27,4 +27,9 @@ commands:
   tpno:
   abfall:
   invsee:
-  tpa:
+  startkick:
+    aliases:
+      - sk
+  votekick:
+    aliases:
+      - vk

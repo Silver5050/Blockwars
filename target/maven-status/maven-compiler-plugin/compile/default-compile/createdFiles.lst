@@ -4,11 +4,14 @@ de\silver\blockwars\commands\DiscordCommand.class
 de\silver\blockwars\commands\NightCommand.class
 de\silver\blockwars\commands\WorkBenchCommand.class
 de\silver\blockwars\commands\AbfallCommand.class
+de\silver\blockwars\commands\StartKickCommand.class
+de\silver\blockwars\commands\VoteKickCommand.class
 de\silver\blockwars\commands\DayCommand.class
 de\silver\blockwars\commands\GameModeCommand.class
 de\silver\blockwars\commands\FlyCommand.class
 de\silver\blockwars\Main.class
 de\silver\blockwars\listener\onQuitListener.class
+de\silver\blockwars\listener\PlayerJoinListener.class
 de\silver\blockwars\commands\EnderchestCommand.class
 de\silver\blockwars\commands\InvseeCommand.class
 de\silver\blockwars\commands\VanishCommand.class
