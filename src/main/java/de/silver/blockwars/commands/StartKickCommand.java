@@ -17,6 +17,8 @@ public class StartKickCommand implements CommandExecutor {
     public static boolean StartTimer = false;
     public static Player targetPlayer;
 
+
+
     @Override
     public boolean onCommand(CommandSender s, Command cmd, String string, String[] args) {
         if(!(s instanceof Player)) return false;
@@ -60,7 +62,9 @@ public class StartKickCommand implements CommandExecutor {
             all.sendMessage(Main.prefix + "Soll der Spieler " + t.getName() + " für 5min");
             all.sendMessage(Main.prefix + "rausgeworfen werden?");
             all.sendMessage(Main.prefix + "");
+            all.sendMessage(Main.prefix + "Grund: " + message);
             all.sendMessage(Main.prefix + "Dauer: 30sek");
+            all.sendMessage(Main.prefix + "");
             all.spigot().sendMessage(no);
             all.spigot().sendMessage(yes);
             all.sendMessage(Main.prefix + "");
