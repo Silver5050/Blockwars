@@ -21,10 +21,7 @@ commands:
   day:
   night:
   tpa:
-  tpaccept:
-  tpdeny:
-  tpyes:
-  tpno:
+  tpahere:
   abfall:
   invsee:
   startkick:

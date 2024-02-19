@@ -13,3 +13,11 @@
 /target/classes/de/silver/blockwars/listener/onQuitListener.class
 /target/classes/de/silver/blockwars/commands/VanishCommand.class
 /target/classes/de/silver/blockwars/commands/WorkBenchCommand.class
+/target/blockwars-1.0-SNAPSHOT-shaded.jar
+/target/classes/de/silver/blockwars/listener/onMoveListener.class
+/target/original-blockwars-1.0-SNAPSHOT.jar
+/target/classes/de/silver/blockwars/listener/PlayerJoinListener.class
+/target/classes/de/silver/blockwars/commands/StartKickCommand.class
+/target/classes/de/silver/blockwars/commands/TpaCommand.class
+/target/classes/de/silver/blockwars/commands/VoteKickCommand.class
+/target/

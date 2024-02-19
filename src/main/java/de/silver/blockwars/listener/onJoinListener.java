@@ -12,7 +12,7 @@ public class onJoinListener implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         e.setJoinMessage(null);
         Player p = e.getPlayer();
-        if (p.hasPlayedBefore()) {
+        if (!p.hasPlayedBefore()) {
             e.setJoinMessage(Main.prefix + "Der Spieler §b" + p.getName() + "§7 ist das erste Mal dem Server beigetreten!");
         }
     }
