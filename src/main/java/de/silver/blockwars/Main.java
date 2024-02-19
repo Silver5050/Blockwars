@@ -40,6 +40,7 @@ public final class Main extends JavaPlugin {
         getCommand("startkick").setExecutor(new StartKickCommand());
         getCommand("votekick").setExecutor(new VoteKickCommand());
         getCommand("tpa").setExecutor(new TpaCommand());
+        getCommand("tpahere").setExecutor(new TpaHereCommand());
 
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new onJoinListener(), this);

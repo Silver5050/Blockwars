@@ -21,6 +21,7 @@ commands:
   day:
   night:
   tpa:
+  tpahere:
   abfall:
   invsee:
   startkick:
