@@ -22,13 +22,12 @@ public class HealCommand implements CommandExecutor {
                 player.setFoodLevel(20);
                 player.setHealth(20);
 
-
             } else if(args.length == 1 ) {
                 Player target = Bukkit.getPlayer(args[0]);
                 if(target != null) {
                     target.setHealth(20);
                     target.setFoodLevel(20);
-                    target.sendMessage(Main.prefix + "§aDu wurdest geheilt!");
+                    target.sendMessage(Main.prefix + "Du wurdest §bgeheilt!");
                     player.sendMessage(Main.prefix + "§aDu heilst §6" + target.getPlayerListName());
                 } else {
                     player.sendMessage(Main.prefix + "§cDer spieler §6" + args[0] + " §cist nicht auf dem server!");

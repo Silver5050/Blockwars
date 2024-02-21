@@ -17,18 +17,18 @@ public class GameModeCommand implements CommandExecutor {
                 if (args.length == 1) {
                     if (args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("survival")) {
                         ((Player) s).setGameMode(GameMode.SURVIVAL);
-                        s.sendMessage(Main.prefix + "§fDu bist jetzt im Überlebensmodus");
+                        s.sendMessage(Main.prefix + "Du bist jetzt im §bÜberlebensmodus");
                     } else if (args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("creative")) {
                         ((Player) s).setGameMode((GameMode.CREATIVE));
-                        s.sendMessage(Main.prefix + "§fDu bist jetzt im Kreativmodus");
+                        s.sendMessage(Main.prefix + "Du bist jetzt im §bKreativmodus");
                     } else if (args[0].equalsIgnoreCase("2") || args[0].equalsIgnoreCase("adventure")) {
                         ((Player) s).setGameMode(GameMode.ADVENTURE);
-                        s.sendMessage(Main.prefix + "§fDu bist jetzt im Abenteuermodus");
+                        s.sendMessage(Main.prefix + "Du bist jetzt im §bAbenteuermodus");
                     } else if (args[0].equalsIgnoreCase("3") || args[0].equalsIgnoreCase("spectator")) {
                         ((Player) s).setGameMode(GameMode.SPECTATOR);
-                        s.sendMessage(Main.prefix + "§fDu bist jetzt im spectatormodus");
+                        s.sendMessage(Main.prefix + "Du bist jetzt im §bspectatormodus");
                     }else {
-                        s.sendMessage(Main.prefix + "§fBitte verwende /gm 0-3 (name)");
+                        s.sendMessage(Main.prefix + "Bitte verwende /gm 0-3 (name)");
                     }
                 } else if (args.length == 2) {
                     if (args[0].equalsIgnoreCase("0")) {

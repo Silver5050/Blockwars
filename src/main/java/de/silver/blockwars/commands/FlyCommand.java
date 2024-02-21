@@ -18,14 +18,14 @@ public class FlyCommand implements CommandExecutor {
            if (!p.getAllowFlight()) {
                p.setAllowFlight(true);
                p.setFlying(true);
-               p.sendMessage(Main.prefix + "Du kannst Jetzt fliegen!");
+               p.sendMessage(Main.prefix + "Du kannst Jetzt §bfliegen§7!");
            }else {
                p.setAllowFlight(false);
                p.setFlying(false);
                p.sendMessage(Main.prefix + "§4Du kannst jetzt nicht mehr fliegen!");
            }
        }else {
-           sender.sendMessage(Main.prefix + "§4Dazu hast du keine rechte");
+           sender.sendMessage(Main.prefix + "§4Dazu hast du keine Rechte");
        }
         return false;
     }

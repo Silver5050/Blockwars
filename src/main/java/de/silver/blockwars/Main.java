@@ -12,7 +12,7 @@ public final class Main extends JavaPlugin {
 
     private static Main instance;
 
-    public static String prefix = "§f[§bBlockWars§f] §7";
+    public static String prefix = "§f[§b§lBlockWars§f] §7";
 
 
     @Override
