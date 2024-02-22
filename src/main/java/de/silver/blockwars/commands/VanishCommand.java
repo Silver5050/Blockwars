@@ -31,7 +31,7 @@ public final class VanishCommand implements CommandExecutor {
             targetPlayer = (Player) sender;
 
         } else {
-            // /vanish <player> -> toggle status of other player
+
             targetPlayer = Bukkit.getPlayer(args[0]);
 
             if (targetPlayer == null) {

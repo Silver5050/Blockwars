@@ -2,8 +2,10 @@ package de.silver.blockwars;
 
 import de.silver.blockwars.commands.*;
 import de.silver.blockwars.listener.*;
+import net.luckperms.api.LuckPerms;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -18,6 +20,11 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
 
+        RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
+        if (provider != null) {
+            LuckPerms api = provider.getProvider();
+        }
+        
         instance = this;
 
         Bukkit.getConsoleSender().sendMessage("§7======================================");
