@@ -15,13 +15,14 @@ public class ScoreboardUtil extends ScoreboardBuilder {
         super(p, "  " + "§b§lBLOCKWARS" + "  ");
     }
 
+
     @Override
     public void createScoreboard() {
-        //User user = Main.getInstance().getLuckPerms().getUserManager().getUser(player.getUniqueId());
-        //Group group = Main.getInstance().getLuckPerms().getGroupManager().getGroup(user.getPrimaryGroup());
+        User user = Main.getInstance().getLuckPerms().getUserManager().getUser(player.getUniqueId());
+        Group group = Main.getInstance().getLuckPerms().getGroupManager().getGroup(user.getPrimaryGroup());
         setScore("§3 ", 9);
         setScore(" §7Rang:", 8);
-        setScore(" §8➥ §7%playerrank%" , 7);
+        setScore(" §8➥ " + user  , 7);
         setScore("§c ", 6);
         setScore("§c ", 5);
         setScore(" §bMünzen:", 4);
@@ -32,7 +33,11 @@ public class ScoreboardUtil extends ScoreboardBuilder {
 
     @Override
     public void update() {
-
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            ScoreboardUtil scoreboardUtil = new ScoreboardUtil(player);
+            scoreboardUtil.createScoreboard();
+            scoreboardUtil.update();
+        }
     }
 }
 

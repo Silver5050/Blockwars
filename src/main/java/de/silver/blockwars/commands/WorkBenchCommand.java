@@ -8,8 +8,6 @@ import org.bukkit.entity.Player;
 
 public class WorkBenchCommand implements CommandExecutor {
 
-    private static String prefix = "§f[§bBlockWars§f] ";
-
     @Override
     public boolean onCommand(CommandSender s, Command cmd, String label, String[] args) {
         if (s.hasPermission("blockwars.command.workebench"))
