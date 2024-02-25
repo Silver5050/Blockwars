@@ -3,6 +3,7 @@ package de.silver.blockwars;
 import de.silver.blockwars.commands.*;
 import de.silver.blockwars.listener.*;
 import net.luckperms.api.LuckPerms;
+import net.luckperms.api.LuckPermsProvider;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -21,10 +22,9 @@ public final class Main extends JavaPlugin {
     public void onEnable() {
 
         RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
-        if (provider != null) {
-            LuckPerms api = provider.getProvider();
-        }
-        
+        LuckPerms api = LuckPermsProvider.get();
+
+
         instance = this;
 
         Bukkit.getConsoleSender().sendMessage("§7======================================");
@@ -60,11 +60,11 @@ public final class Main extends JavaPlugin {
     @Override
     public void onDisable() {
 
-        Bukkit.getConsoleSender().sendMessage("§7======================================");
+        Bukkit.getConsoleSender().sendMessage("§7=========================================");
         Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bStatus: §adisabled");
         Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bVersion: §6" + this.getDescription().getVersion());
         Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bDeveloper: §6" + this.getDescription().getAuthors());
-        Bukkit.getConsoleSender().sendMessage("§7======================================");
+        Bukkit.getConsoleSender().sendMessage("§7=========================================");
 
 
     }

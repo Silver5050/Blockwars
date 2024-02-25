@@ -18,7 +18,6 @@ public class StartKickCommand implements CommandExecutor {
     public static Player targetPlayer;
 
 
-
     @Override
     public boolean onCommand(CommandSender s, Command cmd, String string, String[] args) {
         if(!(s instanceof Player)) return false;

@@ -7,6 +7,7 @@ import net.luckperms.api.model.user.User;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class ScoreboardUtil extends ScoreboardBuilder {
 
@@ -16,8 +17,8 @@ public class ScoreboardUtil extends ScoreboardBuilder {
 
     @Override
     public void createScoreboard() {
-        // User user = Main.getInstance().getLuckPerms().getUserManager().getUser(player.getUniqueId());
-        // Group group = Main.getInstance().getLuckPerms().getGroupManager().getGroup(user.getPrimaryGroup());
+        //User user = Main.getInstance().getLuckPerms().getUserManager().getUser(player.getUniqueId());
+        //Group group = Main.getInstance().getLuckPerms().getGroupManager().getGroup(user.getPrimaryGroup());
         setScore("§3 ", 9);
         setScore(" §7Rang:", 8);
         setScore(" §8➥ §7%playerrank%" , 7);

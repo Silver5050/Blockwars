@@ -25,7 +25,6 @@ public class AbfallCommand implements CommandExecutor {
                 }
 
         }
-
         return false;
     }
 }
