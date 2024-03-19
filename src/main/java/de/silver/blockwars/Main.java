@@ -2,7 +2,7 @@ package de.silver.blockwars;
 
 import de.silver.blockwars.commands.*;
 import de.silver.blockwars.listener.*;
-import net.luckperms.api.LuckPerms;
+import de.silver.blockwars.sql.MySQL;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -15,19 +15,13 @@ public final class Main extends JavaPlugin {
     private static Main instance;
 
     public static String prefix = "§f[§b§lBlockWars§f] §7";
-
+    private MySQL mysql;
 
     @Override
     public void onEnable() {
 
-        RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
-        if (provider != null) {
-            LuckPerms api = provider.getProvider();
-
-        }
-
-
         instance = this;
+        setupMySQL();
 
         Bukkit.getConsoleSender().sendMessage("§7======================================");
         Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bStatus: §aenabled");
@@ -62,23 +56,29 @@ public final class Main extends JavaPlugin {
     @Override
     public void onDisable() {
 
-        Bukkit.getConsoleSender().sendMessage("§7=========================================");
+        Bukkit.getConsoleSender().sendMessage("§7======================================");
         Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bStatus: §adisabled");
         Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bVersion: §6" + this.getDescription().getVersion());
         Bukkit.getConsoleSender().sendMessage("§bBlock§3Wars §7| §bDeveloper: §6" + this.getDescription().getAuthors());
-        Bukkit.getConsoleSender().sendMessage("§7=========================================");
+        Bukkit.getConsoleSender().sendMessage("§7======================================");
 
 
+    }
+
+    private void setupMySQL() {
+        mysql = new MySQL();
+        mysql.update("CREATE TABLE IF NOT EXISTS player(UUID varchar(64), NAME varchar(32), COINS bigint, PLAYTIME bigint, CLAN varchar(4), IP varchar(32), GEMS bigint)");
+        mysql.update("CREATE TABLE IF NOT EXISTS clans(NAME varchar(32), TAG varchar(4), MODS varchar(999), TRUSTED varchar(999), HOME varchar(999))");
+        mysql.update("CREATE TABLE IF NOT EXISTS friends(UUID varchar(64), FRIENDS varchar(9999))");
     }
 
     public static Main getInstance() {
         return instance;
     }
 
-    public LuckPerms getLuckPerms() {
-        return null;
+
+    public MySQL getMysql() {
+        return mysql;
     }
 
-
 }
-
