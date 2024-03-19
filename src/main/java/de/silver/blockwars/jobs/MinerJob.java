@@ -178,7 +178,7 @@ public class MinerJob implements Listener {
     @EventHandler
     public void onBreak(BlockBreakEvent e) {
         Player p = e.getPlayer();
-        if (!p.getWorld().getName().equals("citybuild")) return;
+        if (p.getWorld().getName().equals("citybuild")) return;
         if (!PlayerSQL.getJob(p.getUniqueId()).equals("miner")) return;
         ItemStack hand = p.getInventory().getItemInMainHand();
         if(hand == null) return;

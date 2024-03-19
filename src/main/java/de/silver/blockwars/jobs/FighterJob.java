@@ -107,7 +107,7 @@ public class FighterJob implements Listener {
     public static Float getMultiplier(UUID uuid) {
         if(playerExist(uuid)) {
             try {
-                ResultSet rs = Main.getInstance().getMysql().query("SELECT * FROM job_farmer WHERE UUID='" + uuid.toString() + "'");
+                ResultSet rs = Main.getInstance().getMysql().query("SELECT * FROM fighter WHERE UUID='" + uuid.toString() + "'");
                 if(rs.next()) {
                     return rs.getFloat("MULTIPLIER");
                 }

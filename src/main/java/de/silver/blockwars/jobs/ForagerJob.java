@@ -115,7 +115,7 @@ public class ForagerJob implements Listener {
 
     public static void updateExp(UUID uuid, Double exp) {
         if(playerExist(uuid)) {
-            Main.getInstance().getMysql().update("UPDATE forager SET EXP='" + getExp(uuid) + exp + "' WHERE UUID='" + uuid.toString() + "'");
+            Main.getInstance().getMysql().update("UPDATE forager SET EXP='" + (getExp(uuid) + exp) + "' WHERE UUID='" + uuid.toString() + "'");
         } else {
             createPlayer(uuid);
             updateExp(uuid, exp);
@@ -156,7 +156,7 @@ public class ForagerJob implements Listener {
     @EventHandler
     public void onBreak(BlockBreakEvent e) {
         Player p = e.getPlayer();
-        if (!p.getWorld().getName().equals("citybuild")) return;
+        if (p.getWorld().getName().equals("citybuild")) return;
         if (!PlayerSQL.getJob(p.getUniqueId()).equals("forager")) return;
         if (blockList.containsKey(e.getBlock().getType())) {
 

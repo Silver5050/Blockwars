@@ -17,9 +17,9 @@ public class JobInventoryManager{
             inv.setItem(i, new ItemCreator().material(Material.GRAY_STAINED_GLASS_PANE).displayName("§9 ").build());
         }
 
-        inv.setItem(11, new ItemCreator().material(Material.WOODEN_SWORD).displayName("§c ").build());
-        inv.setItem(13, new ItemCreator().material(Material.WOODEN_PICKAXE).displayName("§c ").build());
-        inv.setItem(15, new ItemCreator().material(Material.WOODEN_AXE).displayName("§c ").build());
+        inv.setItem(11, new ItemCreator().material(Material.WOODEN_SWORD).displayName("§4§lKÄMPFER-JOB ").build());
+        inv.setItem(13, new ItemCreator().material(Material.WOODEN_PICKAXE).displayName("§7§lMINER-JOB ").build());
+        inv.setItem(15, new ItemCreator().material(Material.WOODEN_AXE).displayName("§§2§lBAUM-FÄLLER ").build());
 
         return inv;
     }
