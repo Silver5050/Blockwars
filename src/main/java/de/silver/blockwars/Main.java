@@ -1,6 +1,9 @@
 package de.silver.blockwars;
 
 import de.silver.blockwars.commands.*;
+import de.silver.blockwars.jobs.FighterJob;
+import de.silver.blockwars.jobs.ForagerJob;
+import de.silver.blockwars.jobs.MinerJob;
 import de.silver.blockwars.listener.*;
 import de.silver.blockwars.sql.MySQL;
 import org.bukkit.Bukkit;
@@ -45,12 +48,17 @@ public final class Main extends JavaPlugin {
         getCommand("tpa").setExecutor(new TpaCommand());
         getCommand("tpahere").setExecutor(new TpaHereCommand());
         getCommand("feed").setExecutor(new TpaHereCommand());
+        getCommand("job").setExecutor(new JobCommand());
 
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new onJoinListener(), this);
         pm.registerEvents(new onQuitListener(), this);
         pm.registerEvents(new onBlockBreakListener(), this);
         pm.registerEvents(new onMoveListener(), this);
+        pm.registerEvents(new JobListener(), this);
+        pm.registerEvents(new MinerJob(), this);
+        pm.registerEvents(new FighterJob(), this);
+        pm.registerEvents(new ForagerJob(), this);
     }
 
     @Override
@@ -67,9 +75,12 @@ public final class Main extends JavaPlugin {
 
     private void setupMySQL() {
         mysql = new MySQL();
-        mysql.update("CREATE TABLE IF NOT EXISTS player(UUID varchar(64), NAME varchar(32), COINS bigint, PLAYTIME bigint, CLAN varchar(4), IP varchar(32), GEMS bigint)");
+        mysql.update("CREATE TABLE IF NOT EXISTS player(UUID varchar(64), NAME varchar(32), COINS bigint, PLAYTIME bigint, CLAN varchar(4), IP varchar(32), GEMS bigint, JOB varchar(32))");
         mysql.update("CREATE TABLE IF NOT EXISTS clans(NAME varchar(32), TAG varchar(4), MODS varchar(999), TRUSTED varchar(999), HOME varchar(999))");
         mysql.update("CREATE TABLE IF NOT EXISTS friends(UUID varchar(64), FRIENDS varchar(9999))");
+        mysql.update("CREATE TABLE IF NOT EXISTS miner(UUID varchar(64), EXP DOUBLE, LEVEL int, MULTIPLIER FLOAT)");
+        mysql.update("CREATE TABLE IF NOT EXISTS fighter(UUID varchar(64), EXP DOUBLE, LEVEL int, MULTIPLIER FLOAT)");
+        mysql.update("CREATE TABLE IF NOT EXISTS forager(UUID varchar(64), EXP DOUBLE, LEVEL int, MULTIPLIER FLOAT)");
     }
 
     public static Main getInstance() {

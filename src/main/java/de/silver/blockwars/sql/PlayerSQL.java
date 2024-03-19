@@ -43,8 +43,8 @@ public class PlayerSQL {
 
     public static void createPlayer(UUID uuid) {
         if (!playerExist(uuid)) {
-            Main.getInstance().getMysql().update("INSERT INTO player(UUID, NAME, COINS, PLAYTIME, CLAN, IP, GEMS)" +
-                    " VALUES ('" + uuid.toString() + "', '" + Bukkit.getPlayer(uuid).getName() + "','1000', '0', '', '" + Bukkit.getPlayer(uuid).getAddress().getAddress().toString().replace("/", "") + "', '0')");
+            Main.getInstance().getMysql().update("INSERT INTO player(UUID, NAME, COINS, PLAYTIME, CLAN, IP, GEMS, JOB)" +
+                    " VALUES ('" + uuid.toString() + "', '" + Bukkit.getPlayer(uuid).getName() + "','1000', '0', '', '" + Bukkit.getPlayer(uuid).getAddress().getAddress().toString().replace("/", "") + "', '0', '')");
         }
     }
 
@@ -61,6 +61,23 @@ public class PlayerSQL {
         } else {
             createPlayer(uuid);
             getCoins(uuid);
+        }
+        return null;
+    }
+
+    public static String getJob(UUID uuid) {
+        if (playerExist(uuid)) {
+            try {
+                ResultSet rs = Main.getInstance().getMysql().query("SELECT * FROM player WHERE UUID='" + uuid + "'");
+                if (rs.next()) {
+                    return rs.getString("JOB");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } else {
+            createPlayer(uuid);
+            getJob(uuid);
         }
         return null;
     }
@@ -138,6 +155,14 @@ public class PlayerSQL {
         } else {
             createPlayer(uuid);
             setCoins(uuid, coins);
+        }
+    }
+    public static void setJob(UUID uuid, String job) {
+        if(playerExist(uuid)) {
+            Main.getInstance().getMysql().update("UPDATE player SET JOB='" + job + "' WHERE UUID='" + uuid + "'");
+        } else {
+            createPlayer(uuid);
+            setJob(uuid, job);
         }
     }
 
