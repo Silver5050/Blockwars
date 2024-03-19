@@ -30,14 +30,14 @@ public class JobListener implements Listener {
             if (e.getRawSlot() == 13) {
                 if (!PlayerSQL.getJob(p.getUniqueId()).equals("miner")) {
                     PlayerSQL.setJob(p.getUniqueId(), "miner");
-                    p.sendMessage(Main.prefix + "Du hast deinen Job zu §7§MINEN-ARBEITER §7gewechselt!");
+                    p.sendMessage(Main.prefix + "Du hast deinen Job zu §7§lMINEN-ARBEITER §7gewechselt!");
                     p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1, 1);
                 }
             }
             if (e.getRawSlot() == 15) {
                 if (!PlayerSQL.getJob(p.getUniqueId()).equals("forager")) {
                     PlayerSQL.setJob(p.getUniqueId(), "forager");
-                    p.sendMessage(Main.prefix + "Du hast deinen Job zu §2§LBAUM-FÄLLER §7gewechselt!");
+                    p.sendMessage(Main.prefix + "Du hast deinen Job zu §2§lBAUM-FÄLLER §7gewechselt!");
                     p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1, 1);
                 }
             }

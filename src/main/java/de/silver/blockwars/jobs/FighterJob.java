@@ -149,7 +149,7 @@ public class FighterJob implements Listener {
 
     public static void updateExp(UUID uuid, Double exp) {
         if(playerExist(uuid)) {
-            Main.getInstance().getMysql().update("UPDATE fighter SET EXP='" + getExp(uuid) + exp + "' WHERE UUID='" + uuid.toString() + "'");
+            Main.getInstance().getMysql().update("UPDATE fighter SET EXP='" + (getExp(uuid) + exp) + "' WHERE UUID='" + uuid.toString() + "'");
         } else {
             createPlayer(uuid);
             updateExp(uuid, exp);
